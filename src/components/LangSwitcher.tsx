@@ -21,9 +21,9 @@ export default function LanguageSwitcher() {
     <div className="flex gap-2">
       <button
         onClick={locale === "fa" ? () => switchLocale("en") : () => switchLocale("fa")}
-        className={`px-3 py-1 rounded bg-blue-400`}
+        className={`w-8 h-8 rounded-full bg-primary hover:bg-primary-hover cursor-pointer font-semibold`}
       >
-       {locale === "fa" ? "english":"فارسی"}
+       {locale === "fa" ? "en":"fa"}
       </button>
      
     </div>

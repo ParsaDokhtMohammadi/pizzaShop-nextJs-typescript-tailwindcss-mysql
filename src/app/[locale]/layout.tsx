@@ -5,7 +5,7 @@ import "./globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import LanguageSwitcher from "@/components/LangSwitcher";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,12 +35,10 @@ export default async function RootLayout({
     notFound()
   }
   return (
-    <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'} className="dark">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/images/other/background.webp)]`}>
         <NextIntlClientProvider>
-          <LanguageSwitcher />
+          <Navbar></Navbar>
           {children}
         </NextIntlClientProvider>
       </body>
