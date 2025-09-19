@@ -1,4 +1,6 @@
-export interface IUser {
+import { RowDataPacket } from "mysql2"
+
+export interface IUser  extends RowDataPacket{
     id : number
     username : string
     email : string
@@ -6,7 +8,7 @@ export interface IUser {
     address ?: string
     role : role
 }
-enum role {
+export enum role {
     CUSTOMER = "customer",
     ADMIN = "admin",
     VIEWER = "viewer"
