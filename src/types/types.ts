@@ -1,0 +1,51 @@
+export interface IUser {
+    id : number
+    username : string
+    email : string
+    password : string
+    address ?: string
+    role : role
+}
+enum role {
+    CUSTOMER = "customer",
+    ADMIN = "admin",
+    VIEWER = "viewer"
+}
+export interface IItem {
+    id :number
+    name : string
+    price : number
+    category : category
+    description : string
+    imageURL ?: string
+}
+enum category {
+    PIZZA = "pizza",
+    DRINK = "drink",
+    SIDEDISH = "sidedish"
+}
+export interface IIngredient {
+    id : number
+    name : string
+    stock : number
+    imageURL ?: string
+}
+
+export interface IOrder {
+    id : number
+    user_id : number
+    status : status
+    type : deliveryType
+    address ?: string
+    orderedAt?:Date
+}
+enum status {
+    PENDING = "pending",
+    PREPARING = "preparing",
+    DELIVERED = "delivered",
+    CANCELLED = 'cancelled'
+}
+enum deliveryType {
+    DELIVERY = "delivery",
+    PICKUP = "pickup"
+}
