@@ -8,6 +8,7 @@
     "emailExists" : "A user with this email already exists",
     "usernameExists":"username already exists",
     "shortPass":"password must be atleast 8 characters",
-    "passRejex" : "Password must include at least one capital letter and one number"
+    "passRejex" : "Password must include at least one capital letter and one number",
+    "success" : "user created successfuly"
   }
 }
