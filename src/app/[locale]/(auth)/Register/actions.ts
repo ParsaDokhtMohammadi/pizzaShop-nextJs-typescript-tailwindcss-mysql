@@ -15,7 +15,16 @@ export const RegisterAction = async (formData: FormData) => {
     [email]
   );
 
-  if (rows[0]) throw new Error("User already exists");
+  if (rows[0]?.email === email) throw new Error("A user with this email already exists");
+  const [rows2] = await db.query<IUser[]>(
+    "SELECT * FROM users WHERE username = ? LIMIT 1",
+    [username]
+  );
+
+  if (rows2[0]?.username === username) throw new Error("Username already exists");
+  if (password.length < 8) throw new Error("Password is too short");
+  if (!/[A-Z]/.test(password)) throw new Error("Password must include at least one capital letter");
+  if (!/[0-9]/.test(password)) throw new Error("Password must include at least one number");
 
   const hashedPassword = await hashPassword(password);
 
@@ -23,5 +32,4 @@ export const RegisterAction = async (formData: FormData) => {
     "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)",
     [username, email, hashedPassword, "customer"]
   );
-
 };
