@@ -21,7 +21,7 @@ export interface IItem {
     description : string
     imageURL ?: string
 }
-enum category {
+export enum category {
     PIZZA = "pizza",
     DRINK = "drink",
     SIDEDISH = "sidedish"

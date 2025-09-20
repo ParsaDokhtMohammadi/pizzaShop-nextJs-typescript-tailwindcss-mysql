@@ -11,7 +11,7 @@ const Navbar = () => {
             <div >
                  <LanguageSwitcher/>
             </div>
-            <Image src={"/images/logo.webp"} alt='logo' width={96} height={24}></Image>
+            <Image src={"/images/logo.webp"} alt='logo' width={96} height={96}></Image>
             <div className='flex gap-2 p-1'>
                 <Link href={"/Register"} className='btn'>Register</Link>
                 <Link href={"/Login"} className='btn'>Login</Link>

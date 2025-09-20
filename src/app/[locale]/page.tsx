@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 
-export default async function Home({ params: { locale } }: { params: { locale: string } }) {
+export default async function Home( params: { params: { locale: string } }) {
+  const {locale} = await params.params
   const t = await getTranslations({locale, namespace:'Home'});
 
   return (
@@ -12,3 +13,4 @@ export default async function Home({ params: { locale } }: { params: { locale: s
     </main>
   );
 }
+ 

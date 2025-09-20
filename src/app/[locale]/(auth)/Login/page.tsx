@@ -1,4 +1,3 @@
-"use server"
 
 import LoginPage from "@/template/LoginPage";
 

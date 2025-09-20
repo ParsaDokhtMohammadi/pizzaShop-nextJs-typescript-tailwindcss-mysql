@@ -10,15 +10,15 @@ import { useParams } from "next/navigation";
 
 const RegisterPage = () => {
   const t = useTranslations("AuthErrors")
-  const {locale} = useParams()
+  const { locale } = useParams()
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(""); 
+  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setMessage(""); 
+    setMessage("");
 
     try {
       const formData = new FormData();
@@ -26,10 +26,14 @@ const RegisterPage = () => {
       formData.append("email", email);
       formData.append("password", password);
 
-      await RegisterAction(formData , locale as string);
+      await RegisterAction(formData, locale as string);
       setMessage(t("success"));
-    } catch (err: any) {
-      setMessage(err?.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setMessage(err.message);
+      } else {
+        setMessage("Something went wrong ❌");
+      }
     }
   };
 
