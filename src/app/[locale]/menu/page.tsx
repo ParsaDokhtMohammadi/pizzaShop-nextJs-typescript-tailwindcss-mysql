@@ -1,18 +1,14 @@
-"use server"
-import { menuAction } from './action'
-import MenuPage from '@/template/MenuPage'
+"use server";
 
-// export const revalidate = 60 * 60 * 24 //make page ISR
+import { menuAction } from './action';
+import MenuPage from '@/template/MenuPage';
 
+export default async function Menu() {
+  const data = await menuAction({
+    next: { revalidate: 60 * 60 * 24 }
+  })
+  console.log(data);
+  
 
-const Menu = async () => {
-    const data = await menuAction()
-    console.log(data);
-    
- 
-  return (
-        <MenuPage/>
-  )
+  return <MenuPage/>;
 }
-
-export default Menu
