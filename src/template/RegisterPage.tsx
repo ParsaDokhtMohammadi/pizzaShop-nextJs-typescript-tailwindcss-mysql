@@ -11,11 +11,9 @@ import { useParams } from "next/navigation";
 const RegisterPage = () => {
   const t = useTranslations("AuthErrors")
   const {locale} = useParams()
-
-  
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState(""); 
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {

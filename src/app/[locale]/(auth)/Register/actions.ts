@@ -1,7 +1,7 @@
 "use server";
 import { db } from "@/utils/db";
 import { hashPassword } from "@/utils/auth";
-import { IUser } from "@/types/types";
+import { IUser } from "@/types/types"; 
 import { getTranslations } from "next-intl/server";
 
 
