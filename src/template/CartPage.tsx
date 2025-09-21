@@ -1,8 +1,20 @@
+import Card from '@/components/Card'
+import { IItem } from '@/types/types'
 import React from 'react'
 
-const CartPage = () => {
+const CartPage = ({data} : {data:IItem[]}) => {
+
+  
   return (
-    <div>CartPage</div>
+    <div className='flex'>
+      <ul className='flex list-none flex-wrap'>
+            {data.map((datum , index)=>(
+              <li key={index}>
+                <Card data={datum}/>
+              </li>
+      ))}
+      </ul>
+    </div>
   )
 }
 

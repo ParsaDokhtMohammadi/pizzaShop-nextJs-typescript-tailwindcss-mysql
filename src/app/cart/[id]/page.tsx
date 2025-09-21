@@ -1,13 +1,16 @@
 import CartPage from "@/template/CartPage";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+
 import { redirect } from "next/navigation";
+import { sessionHelper } from "@/utils/sessionHelper";
+import { getCartItems } from "../actions";
+import { IItem } from "@/types/types";
 
 
 export default async function Cart({ params }: { params: { id: string } }) {
   const { id } = await params;
-  const session = await getServerSession(authOptions);
-  if(session?.user?.id !=id) redirect("/")
-
-  return <CartPage/>;
+  const User = await sessionHelper()
+  if(User?.id !=id || !User) redirect("/")
+  const data = await getCartItems(+User?.id)
+  
+  return <CartPage data={data as IItem[]}/>;
 }
