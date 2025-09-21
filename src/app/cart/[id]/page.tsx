@@ -9,5 +9,5 @@ export default async function Cart({ params }: { params: { id: string } }) {
   const session = await getServerSession(authOptions);
   if(session?.user?.id !=id) redirect("/")
 
-  return <CartPage  />;
+  return <CartPage/>;
 }

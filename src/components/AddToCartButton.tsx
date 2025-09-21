@@ -1,10 +1,22 @@
 "use client"
 
+import { AddToCardAction } from "@/app/cart/actions";
 
-const AddToCartButton = () => {
+type AddToCartButtonProps = {
+  cartId: string;
+  itemId: number;
+  quantity?: number;
+};
+
+const AddToCartButton = ({ cartId, itemId, quantity = 1 }: AddToCartButtonProps) => {
   return (
-    <button>add to cart</button>
-  )
-}
+    <button
+      className="bg-white text-black border rounded-2xl cursor-pointer"
+      onClick={() => AddToCardAction(cartId, itemId, quantity)}
+    >
+      Add to cart
+    </button>
+  );
+};
 
-export default AddToCartButton
+export default AddToCartButton;

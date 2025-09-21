@@ -2,15 +2,19 @@ import { IItem } from '@/types/types'
 import Image from 'next/image'
 import React from 'react'
 import AddToCartButton from './AddToCartButton'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 
-const Card = ({data} : {data:IItem}) => {
+const Card = async({ data }: { data: IItem }) => {
+    const session = await getServerSession(authOptions)
+    const user_id  = session?.user?.id ?? ""
+    
   return (
     <div className='flex flex-col p-2 bg-bgPrimary gap-4'>
-        <Image src={data.imageURL || ""} alt='logo' width={96} height={96}/>
+        <Image src={data.imageURL || ""} alt={data.name} width={96} height={96}/>
         <h2>{data.name}</h2>
-        <AddToCartButton/>
+        <AddToCartButton cartId={user_id} itemId={data.id} quantity={1}/>
     </div>
   )
 }
-
 export default Card
