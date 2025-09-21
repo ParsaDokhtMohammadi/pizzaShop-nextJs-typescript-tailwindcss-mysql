@@ -2,12 +2,12 @@ import { IItem } from '@/types/types'
 import Image from 'next/image'
 import React from 'react'
 import AddToCartButton from './AddToCartButton'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { sessionHelper } from '@/utils/sessionHelper'
+
 
 const Card = async({ data }: { data: IItem }) => {
-    const session = await getServerSession(authOptions)
-    const user_id  = session?.user?.id ?? ""
+    const session = await sessionHelper()
+    const user_id  = session?.id ?? ""
     
   return (
     <div className='flex flex-col p-2 bg-bgPrimary gap-4'>

@@ -9,3 +9,6 @@ export const getCartItems = async (id: number) => {
     const [rows] = await db.query("call getCartItems(?)",[+id])
     return rows
 }
+export const removeFromCart = async (cart_Id : string , Item_id : number) => {
+    await db.query("delete from cart_items where cart_id = ? and item_id = ?",[cart_Id , Item_id])
+}
