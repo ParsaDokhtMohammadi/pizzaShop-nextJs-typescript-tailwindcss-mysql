@@ -1,12 +1,8 @@
 "use client"
 import { signIn } from 'next-auth/react';
-import { useParams } from 'next/navigation';
-import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 
 const LoginPage = () => {
-  const router = useRouter();
-  const { locale } = useParams();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -24,7 +20,7 @@ const LoginPage = () => {
       setMessage(result.error);
     } else {
       setMessage("ورود موفقیت آمیز بود!");
-      router.push(`/${locale}/dashboard`);
+
     }
   };
 
@@ -34,20 +30,20 @@ const LoginPage = () => {
       <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="username"
+          placeholder="نام کاربری"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           className="border p-2 rounded"
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="رمز عبور"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="border p-2 rounded"
         />
         <button type="submit" className="btn bg-primary text-white p-2 rounded">
-          Login
+          ورود
         </button>
       </form>
       {message && <p className="mt-2">{message}</p>}

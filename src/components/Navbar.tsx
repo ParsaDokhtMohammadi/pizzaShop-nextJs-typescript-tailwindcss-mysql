@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import LanguageSwitcher from './LangSwitcher'
 import Link from 'next/link'
 
 const Navbar = () => {
@@ -9,7 +8,7 @@ const Navbar = () => {
     <nav className='flex flex-col   w-full  items-center'>
         <div className='flex justify-between items-center px-2 bg-bgPrimary border-b-[1px] w-full'>
             <div >
-                 <LanguageSwitcher/>
+
             </div>
             <Image src={"/images/logo.webp"} alt='logo' width={96} height={96}></Image>
             <div className='flex gap-2 p-1'>
