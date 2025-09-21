@@ -1,15 +1,13 @@
-import CartPage from '@/template/CartPage'
-import React from 'react'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import CartPage from "@/template/CartPage";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
-const Cart = async() => {
-  const session = await getServerSession(authOptions)
-  console.log(session?.user);
-   
-  return (
-    <CartPage></CartPage>
-  )
+
+export default async function Cart({ params }: { params: { id: string } }) {
+  const { id } = await params;
+  const session = await getServerSession(authOptions);
+  if(session?.user?.id !=id) redirect("/")
+
+  return <CartPage  />;
 }
-
-export default Cart
