@@ -1,12 +1,10 @@
 "use server";
 
+import { IItem } from '@/types/types';
 import { menuAction } from './action';
 import MenuPage from '@/template/MenuPage';
 
 export default async function Menu() {
   const data = await menuAction()
-  console.log(data);
-  
-
-  return <MenuPage/>;
+  return <MenuPage data={data as Array<IItem>}/>;
 }
