@@ -1,6 +1,8 @@
-
 import LoginPage from "@/template/LoginPage";
 
-export default function Login() {
- return<LoginPage/>
+import { Redirector } from "@/utils/Redirector";
+
+export default async function  Login() {
+    await Redirector()
+    return <LoginPage />
 }
