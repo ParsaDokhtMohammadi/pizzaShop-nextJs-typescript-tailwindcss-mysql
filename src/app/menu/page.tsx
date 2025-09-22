@@ -14,11 +14,10 @@ export default async function Menu() {
   let CartItemIds:Array<number> = []
   if (User?.id) {
    const InCartItems = await getCartItems(+User.id);
-   console.log(InCartItems);
     InCartItems.forEach(item => {
       CartItemIds.push(+item.id)
     });
-    console.log(CartItemIds);
+
     
   }
   return <MenuPage data={data as Array<IItem>} inCart={CartItemIds} />;

@@ -2,7 +2,7 @@ import Card from '@/components/Card'
 import { IItem } from '@/types/types'
 import React from 'react'
 
-const CartPage = ({data} : {data:IItem[]}) => {
+const CartPage = ({data,inCart} : {data:IItem[] , inCart:Array<number>}) => {
 
   
   return (
@@ -10,7 +10,7 @@ const CartPage = ({data} : {data:IItem[]}) => {
       <ul className='flex list-none flex-wrap'>
             {data.map((datum , index)=>(
               <li key={index}>
-                <Card data={datum}/>
+                <Card data={datum} inCart={inCart.includes(datum.id)}/>
               </li>
       ))}
       </ul>
