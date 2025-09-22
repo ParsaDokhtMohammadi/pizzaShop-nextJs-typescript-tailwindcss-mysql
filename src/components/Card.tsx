@@ -8,7 +8,6 @@ import { sessionHelper } from '@/utils/sessionHelper'
 const Card = async({ data }: { data: IItem }) => {
     const session = await sessionHelper()
     const user_id  = session?.id ?? ""
-    console.log(data);
     
   return (
     <div className='flex flex-col p-2 bg-bgPrimary gap-4'>

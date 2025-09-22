@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { sessionHelper } from "@/utils/sessionHelper";
+import { getToken } from "next-auth/jwt";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +27,6 @@ export default async function RootLayout({
   children: React.ReactNode,
   params: Promise<{ locale: string }>
 }>) {
-
 
 
   return (

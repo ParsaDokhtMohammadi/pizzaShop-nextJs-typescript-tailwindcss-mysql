@@ -1,7 +1,6 @@
 "use client"
 
-import { AddToCardAction } from "@/app/cart/actions";
-
+import { AddToCardAction} from "@/app/cart/actions";
 type AddToCartButtonProps = {
   cartId: string;
   itemId: number;

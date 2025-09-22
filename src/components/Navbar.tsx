@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
-import { LuShoppingCart } from "react-icons/lu";
-import { sessionHelper } from '@/utils/sessionHelper';
+import CartLink from './CartLink'
+
 
 
 const Navbar = async() => {
-  const User = await sessionHelper()
 
+    
   return (
         <>
     <nav className='flex flex-col   w-full  items-center'>
@@ -18,9 +18,7 @@ const Navbar = async() => {
             <div className='flex gap-2 p-1'>
                 <Link href={"/Register"} className='btn'>Register</Link>
                 <Link href={"/Login"} className='btn'>Login</Link>
-                <Link href={`/cart/${User?.id}`}>
-                <LuShoppingCart />
-                </Link>
+                <CartLink/>
             </div>
         </div>
         <div className='max-w-[75%] w-full  flex justify-between py-2 bg-bgPrimary  px-6 rounded-br-2xl rounded-bl-2xl'>
