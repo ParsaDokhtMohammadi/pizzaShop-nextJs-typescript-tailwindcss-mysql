@@ -31,7 +31,7 @@ export default async function RootLayout({
 
   return (
     <html lang="fa" dir="rtl" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/images/other/background.webp)]`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/images/other/background.jpg)] bg-repeat `}>
 
           <Navbar></Navbar>
           {children}
