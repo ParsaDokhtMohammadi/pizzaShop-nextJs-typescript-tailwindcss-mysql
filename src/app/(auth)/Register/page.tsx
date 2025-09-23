@@ -6,5 +6,5 @@ import { Redirector } from "@/utils/Redirector";
 export default async function Register() {
   await Redirector()
 
-  return <RegisterPage/>;
+  return<RegisterPage/> ;
 }
