@@ -1,8 +1,8 @@
 import Card from '@/components/Card'
-import { IItem } from '@/types/types'
+import { ICartItem } from '@/types/types'
 import React from 'react'
 
-const CartPage = ({data,inCart} : {data:IItem[] , inCart:Array<number>}) => {
+const CartPage = ({data,inCart} : {data:Array<ICartItem> , inCart:Array<number>}) => {
 
   
   return (

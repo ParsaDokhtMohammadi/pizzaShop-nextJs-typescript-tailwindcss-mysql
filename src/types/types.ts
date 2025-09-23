@@ -51,3 +51,12 @@ enum deliveryType {
     DELIVERY = "delivery",
     PICKUP = "pickup"
 }
+
+export interface ICartItem  {
+  id:number,
+  category : category,
+  imageURL : string,
+  name : string,
+  price : string,
+  quantity : number
+}

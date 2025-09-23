@@ -1,6 +1,6 @@
 "use server";
 
-import { IItem } from '@/types/types';
+import { ICartItem, IItem } from '@/types/types';
 import { menuAction } from './action';
 import MenuPage from '@/template/MenuPage';
 import { getCartItems } from '../cart/actions';
@@ -20,5 +20,5 @@ export default async function Menu() {
 
     
   }
-  return <MenuPage data={data as Array<IItem>} inCart={CartItemIds} />;
+  return <MenuPage data={data as Array<ICartItem>} inCart={CartItemIds} />;
 }

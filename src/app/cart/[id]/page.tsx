@@ -3,7 +3,7 @@ import CartPage from "@/template/CartPage";
 import { redirect } from "next/navigation";
 import { sessionHelper } from "@/utils/sessionHelper";
 import { getCartItems } from "../actions";
-import { IItem } from "@/types/types";
+import { ICartItem } from "@/types/types";
 
 
 export default async function Cart({ params }: { params: { id: string } }) {
@@ -16,5 +16,5 @@ export default async function Cart({ params }: { params: { id: string } }) {
     CartItemIds.push(+item.id)
   });
 
-  return <CartPage data={data as IItem[]} inCart={CartItemIds} />;
+  return <CartPage data={data as []} inCart={CartItemIds} />;
 } 

@@ -1,8 +1,8 @@
 import Card from '@/components/Card';
-import { IItem } from '@/types/types'
+import { ICartItem, IItem } from '@/types/types'
 import React from 'react'
 
-const MenuPage = ({data , inCart} : {data : Array<IItem> , inCart: Array<number>}) => {  
+const MenuPage = ({data , inCart} : {data : Array<ICartItem> , inCart: Array<number>}) => {  
   return (
     <div className='flex'>
       <ul className='list-none flex gap-5 flex-wrap items-center'>
