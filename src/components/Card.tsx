@@ -9,14 +9,14 @@ import ItemQuantity from './ItemQuantity'
 const Card = async({ data , inCart}: { data: ICartItem , inCart : boolean}) => {
 
     const session = await sessionHelper()
-    const user_id  = session?.id ?? ""
+    const user_id  = session?.id ?? undefined
 
     
   return (
     <div className='flex flex-col p-2 bg-bgPrimary gap-4'>
         <Image src={data.imageURL || ""} alt={data.name} width={96} height={96}/>
         <h2>{data.name}</h2>
-        {inCart ?<ItemQuantity quantity={data.quantity} />: <AddToCartButton cartId={user_id} itemId={data.id} quantity={1} userId={user_id}/>}
+        {inCart ?<ItemQuantity quantity={data.quantity} />: <AddToCartButton cartId={user_id} itemId={data.id} quantity={1} />}
     </div>
   )
 }
