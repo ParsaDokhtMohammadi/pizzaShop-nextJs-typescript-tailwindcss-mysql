@@ -60,3 +60,7 @@ export interface ICartItem  {
   price : string,
   quantity : number
 }
+export type Items = {
+    itemId: number;
+    quantity: number;
+  };

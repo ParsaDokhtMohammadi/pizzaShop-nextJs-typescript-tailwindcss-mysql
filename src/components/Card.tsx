@@ -1,4 +1,4 @@
-import {ICartItem } from '@/types/types'
+import {ICartItem, IItem, Items } from '@/types/types'
 import Image from 'next/image'
 import React from 'react'
 import AddToCartButton from './AddToCartButton'
@@ -7,7 +7,7 @@ import ItemQuantity from './ItemQuantity'
 import Link from 'next/link'
 
 
-const Card = async({ data , inCart}: { data: ICartItem , inCart : boolean}) => {
+const Card = async({ data , inCart}: { data: IItem , inCart : Items|null}) => {
 
     const session = await sessionHelper()
     const user_id  = session?.id ?? undefined
@@ -23,7 +23,7 @@ const Card = async({ data , inCart}: { data: ICartItem , inCart : boolean}) => {
         <div className='flex flex-col justify-between  h-[210px] w-[225px] rounded-2xl bg-bgPrimary px-5 pb-3 '>
         <span className='mt-20 text-sm font-medium'>{data.name}</span>
         <span className='text-sm font-medium'>{data.price} تومان</span>
-        {inCart ?<ItemQuantity quantity={data.quantity} />: <AddToCartButton cartId={user_id} itemId={data.id} quantity={1} />}
+        {inCart ?<ItemQuantity quantity={inCart?.quantity} />: <AddToCartButton cartId={user_id} itemId={data.id} quantity={1} />}
         </div>
     </div>
   )

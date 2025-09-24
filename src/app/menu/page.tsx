@@ -1,24 +1,26 @@
 "use server";
 
-import { ICartItem, IItem } from '@/types/types';
+import { IItem, Items } from '@/types/types';
 import { menuAction } from './action';
 import MenuPage from '@/template/MenuPage';
 import { getCartItems } from '../cart/actions';
 import { sessionHelper } from '@/utils/sessionHelper';
 
 export default async function Menu() {
-  const User = await sessionHelper()
-  const data = await menuAction()
+  const User = await sessionHelper();
+  const data = await menuAction();
 
 
-  let CartItemIds:Array<number> = []
+
+  let CartItems: Array<Items> = [];
+
   if (User?.id) {
-   const InCartItems = await getCartItems(+User.id);
-    InCartItems.forEach(item => {
-      CartItemIds.push(+item.id)
-    });
+    const InCartItems = await getCartItems(+User.id) as any[];
 
-    
+    InCartItems.forEach(item => {
+      CartItems.push({ itemId: +item.id, quantity: item.quantity });
+    });
   }
-  return <MenuPage data={data as Array<ICartItem>} inCart={CartItemIds} />;
+
+  return <MenuPage data={data as Array<IItem>} inCart={CartItems} />;
 }
