@@ -1,5 +1,5 @@
 import Card from '@/components/Card';
-import { ICartItem, IItem, Items } from '@/types/types'
+import {IItem, Items} from '@/types/types'
 import React from 'react'
 
 const MenuPage = ({data , inCart} : {data : Array<IItem> , inCart: Array<Items>}) => {  

@@ -64,3 +64,9 @@ export type Items = {
     itemId: number;
     quantity: number;
   };
+
+export type QuantityInfo = {
+  cart_id: string;
+  item_id: number;
+  quantity: number;
+};
