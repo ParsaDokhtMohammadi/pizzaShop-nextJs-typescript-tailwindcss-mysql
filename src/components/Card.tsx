@@ -12,7 +12,6 @@ const Card = async({ data , inCart}: { data: IItem , inCart : Items|null}) => {
     const session = await sessionHelper()
     const user_id  = session?.id ?? undefined
 
-    
   return (
     <div className='flex flex-col   gap-4  rounded-2xl  relative items-center'>
         <Link href={`/details/${data.id}`} className='relative top-20 z-10 cursor-pointer hover:scale-120 transition-all'>
