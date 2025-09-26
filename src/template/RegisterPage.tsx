@@ -55,7 +55,7 @@ const RegisterPage = () => {
       formData.append("password", password);
       await RegisterAction(formData);
       toast.success("کاربر با موفقیت ایجاد شد", { style: { background: "#161622", color: "#fff" } })
-      // router.replace("/")
+      router.replace("/Login")
     } catch (err: unknown) {
       if (err instanceof Error) {
         toast.error(err.message, { style: { background: "#161622", color: "#fff" } })
