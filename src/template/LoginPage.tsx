@@ -61,7 +61,7 @@ const LoginPage = () => {
                 {...register("username")}
                 type="text"
                 placeholder="نام کاربری"
-                className="px-2 outline-0 placeholder:text-white w-full"
+                className="px-2 outline-0 placeholder:text-text-secondary w-full"
               />
             </div>
             {errors.username && <span className="text-danger w-full">{errors.username.message}</span>}
@@ -72,7 +72,7 @@ const LoginPage = () => {
                 {...register("password")}
                 type="password"
                 placeholder="رمزعبور"
-                className="px-2 outline-0 placeholder:text-white w-full"
+                className="px-2 outline-0 placeholder:text-text-secondary w-full"
               />
             </div>
             {errors.password && <span className="text-danger w-full">{errors.password.message}</span>}
@@ -80,7 +80,7 @@ const LoginPage = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="disabled:bg-gray-500 bg-bgButtons h-[52px] rounded-[30px] p-2 w-[225px] text-2xl font-normal cursor-pointer hover:bg-shadows transition-colors"
+              className="disabled:bg-gray-500 bg-primary text-white h-[52px] rounded-[30px] p-2 w-[225px] text-2xl font-normal cursor-pointer hover:bg-primary-hover transition-colors"
             >
               {isSubmitting ?<BeatLoader color="#ffffff" />:"ورود"}
              
@@ -88,7 +88,7 @@ const LoginPage = () => {
           </form>
           <div className="flex gap-2 text-sm items-center justify-center">
             <span>حساب کاربری ندارید؟</span>
-            <Link href={"/Register"} className="text-sm text-[#8E42A9]">ثبت نام</Link>
+            <Link href={"/Register"} className="text-sm text-primary">ثبت نام</Link>
           </div>
         </div>
       </div>

@@ -5,20 +5,21 @@
 
 :root {
   /* Light (default) */
-  --color-primary: #ff8100;
-  --color-primary-hover: #e67200;
+  --color-primary: #640d5f;
+  --color-primary-hover: #7a1b74; 
   --color-accent: #ffd54f;
   --color-bgPrimary: #fff8f2; 
+  --color-bgSecondary: #E9E9E9; 
   --color-surface: #ffffff;
   --color-text: #1e1e1e;
-  --color-text-secondary: #5c5c5c;
+  --color-text-secondary: #BDB6B6;
   --color-border: #e5e5e5;
   --color-success: #4caf50;
   --color-danger: #e53935;
 }
 .dark {
-  --color-primary: #640d5f;
-  --color-primary-hover: #7a1b74;
+  --color-primary: #e67200;
+  --color-primary-hover:  #ff8100;
   --color-accent: #8e24aa;
   --color-bgPrimary: #282828; 
   --color-bgSecondary: #353435; 

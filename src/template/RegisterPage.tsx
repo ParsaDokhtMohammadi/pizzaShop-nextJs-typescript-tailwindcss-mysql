@@ -79,7 +79,7 @@ const RegisterPage = () => {
         `}>
 
         <div className="flex flex-col justify-center items-center gap-[32px]  w-full   px-20 pt-20 pb-10">
-          <h1 className="text-4xl font-medium">ثبت نام</h1>
+          <h1 className="text-4xl font-medium text-text">ثبت نام</h1>
           <form className="flex flex-col gap-6 w-full items-center max-w-[760px]" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex rounded gap-2 px-3 py-2 items-center bg-bgSecondary h-[50px] w-full">
               <FaUser color="gray" size={24} />
@@ -88,7 +88,7 @@ const RegisterPage = () => {
                 type="text"
                 placeholder="نام کاربری"
 
-                className="px-2 outline-0 placeholder:text-white w-full"
+                className="px-2 outline-0 placeholder:text-text-secondary w-full"
               />
             </div>
             {errors.username && <span className="text-danger w-full">{errors.username.message}</span>}
@@ -98,7 +98,7 @@ const RegisterPage = () => {
                 {...register("email")}
                 type="email"
                 placeholder="ایمیل"
-                className="px-2 outline-0 placeholder:text-white w-full"
+                className="px-2 outline-0 placeholder:text-text-secondary w-full"
               />
             </div>
             {errors.email && <span className="text-danger w-full">{errors.email.message}</span>}
@@ -111,7 +111,7 @@ const RegisterPage = () => {
                 onChange={(e) => {
                   checkPassword(e.target.value)
                 }}
-                className="px-2 outline-0 placeholder:text-white w-full"
+                className="px-2 outline-0 placeholder:text-text-secondary w-full"
               />
             </div>
             {errors.password && <span className="text-danger">{errors.password.message}</span>}
@@ -142,7 +142,7 @@ const RegisterPage = () => {
             <button
               type="submit"
               disabled={!passwordChecks.length || !passwordChecks.char || !passwordChecks.number || isSubmitting}
-              className="disabled:bg-gray-500 bg-bgButtons h-[52px] rounded-[30px] p-2 w-[225px] text-2xl font-normal cursor-pointer hover:bg-shadows transition-colors"
+              className="disabled:bg-gray-500 bg-primary h-[52px] text-white rounded-[30px] p-2 w-[225px] text-2xl font-normal cursor-pointer hover:bg-primary-hover transition-colors"
             >
               {isSubmitting ?<BeatLoader color="#ffffff" />:" ثبت نام"}
              
@@ -150,7 +150,7 @@ const RegisterPage = () => {
           </form>
           <div className="flex gap-2 text-sm items-center justify-center">
             <span>قبلا ثبت نام کرده‌اید؟</span>
-            <Link href={"/Login"} className="text-sm text-[#8E42A9]">ورود</Link>
+            <Link href={"/Login"} className="text-sm text-primary dark:text-primary">ورود</Link>
           </div>
         </div>
       </div>

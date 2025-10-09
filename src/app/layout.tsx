@@ -21,7 +21,7 @@ export default async function RootLayout({
 
 
   return (
-    <html lang="fa" dir="rtl" className="dark">
+    <html lang="fa" dir="rtl" className="">
       <body className={`${IranYekan.className} antialiased bg-[url(/images/other/background.jpg)] bg-repeat `}>
 
           <Navbar></Navbar>
