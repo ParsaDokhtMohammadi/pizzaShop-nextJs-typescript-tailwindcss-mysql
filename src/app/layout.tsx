@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { IranYekan } from "@/utils/fonts";
+import Footer from "@/components/Footer";
 
 
 
@@ -26,7 +27,7 @@ export default async function RootLayout({
 
           <Navbar></Navbar>
           {children}
-
+          <Footer></Footer>
       </body>
     </html>
   );
