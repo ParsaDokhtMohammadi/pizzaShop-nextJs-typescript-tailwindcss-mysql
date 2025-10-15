@@ -1,17 +1,17 @@
 "use client"
 
 
-import { AddToCardAction} from "@/app/cart/actions";
-import { useRouter } from "next/navigation"; 
+import { AddToCardAction } from "@/app/(main)/cart/actions";
+import { useRouter } from "next/navigation";
 import { LuShoppingCart } from "react-icons/lu";
 type AddToCartButtonProps = {
-  cartId: string|undefined
+  cartId: string | undefined
   itemId: number;
   quantity?: number;
 };
 
 const AddToCartButton = ({ cartId, itemId, quantity = 1 }: AddToCartButtonProps) => {
-  const router=useRouter()
+  const router = useRouter()
 
   return (
     <button
@@ -19,7 +19,7 @@ const AddToCartButton = ({ cartId, itemId, quantity = 1 }: AddToCartButtonProps)
       onClick={cartId ? () => {
         AddToCardAction(cartId, itemId, quantity)
         router.refresh()
-      }:()=>router.push("/Login")}
+      } : () => router.push("/Login")}
     >
       <LuShoppingCart className="w-4 h-4" />
       <span className="text-sm">افزودن به سبد خرید</span>

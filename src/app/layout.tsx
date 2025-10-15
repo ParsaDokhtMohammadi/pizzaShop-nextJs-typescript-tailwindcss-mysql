@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import { IranYekan } from "@/utils/fonts";
-import Footer from "@/components/Footer";
+
 
 
 
@@ -14,20 +13,17 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode,
-  params: Promise<{ locale: string }>
 }>) {
 
 
   return (
-    <html lang="fa" dir="rtl" className="">
+    <html lang="fa" dir="rtl" className="dark">
       <body className={`${IranYekan.className} antialiased bg-[url(/images/other/background.jpg)] bg-repeat `}>
 
-          <Navbar></Navbar>
           {children}
-          <Footer></Footer>
+
       </body>
     </html>
   );

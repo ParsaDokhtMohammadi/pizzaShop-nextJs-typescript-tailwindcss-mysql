@@ -1,4 +1,4 @@
-import {ICartItem, IItem, Items } from '@/types/types'
+import {IItem, Items } from '@/types/types'
 import Image from 'next/image'
 import React from 'react'
 import AddToCartButton from './AddToCartButton'

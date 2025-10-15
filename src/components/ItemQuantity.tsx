@@ -1,5 +1,5 @@
 "use client"
-import { setCartItemQuantity , removeFromCart } from "@/app/cart/actions";
+import { setCartItemQuantity , removeFromCart } from "@/app/(main)/cart/actions";
 import { QuantityInfo } from "@/types/types";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
