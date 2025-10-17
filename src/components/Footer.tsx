@@ -5,7 +5,7 @@ import { FaChevronLeft, FaFacebook, FaGithub, FaInstagram, FaPhone } from "react
 import { FooterAction } from "@/app/Actions/Footer";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
-import CopyRightText from "./CopyRightText"
+import CopyRightText from "../elements/CopyRightText"
 
 const imperial = Imperial_Script({
     weight: "400",

@@ -53,7 +53,7 @@ const LoginPage = () => {
         `}>
 
         <div className="flex flex-col justify-center items-center gap-[32px]  w-full   px-20 pt-20 pb-10">
-          <h1 className="text-4xl font-medium">ثبت نام</h1>
+          <h1 className="text-4xl font-medium">ورود</h1>
           <form className="flex flex-col gap-6 w-full items-center max-w-[760px]" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex rounded gap-2 px-3 py-2 items-center bg-bgSecondary h-[50px] w-full">
               <FaUser color="gray" size={24} />

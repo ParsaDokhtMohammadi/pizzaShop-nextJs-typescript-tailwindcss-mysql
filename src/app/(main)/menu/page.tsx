@@ -12,7 +12,7 @@ export default async function Menu() {
 
 
 
-  let CartItems: Array<Items> = [];
+  const CartItems: Array<Items> = [];
 
   if (User?.id) {
     const InCartItems = await getCartItems(+User.id) as any[];

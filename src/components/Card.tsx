@@ -1,9 +1,9 @@
 import {IItem, Items } from '@/types/types'
 import Image from 'next/image'
 import React from 'react'
-import AddToCartButton from './AddToCartButton'
+import AddToCartButton from '../elements/AddToCartButton'
 import { sessionHelper } from '@/utils/sessionHelper'
-import ItemQuantity from './ItemQuantity'
+import ItemQuantity from '../elements/ItemQuantity'
 import Link from 'next/link'
 
 
