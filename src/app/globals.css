@@ -7,7 +7,7 @@
   /* Light (default) */
   --color-primary: #640d5f;
   --color-primary-hover: #7a1b74; 
-  --color-accent: #ffd54f;
+  --color-accent: #8e24aa;
   --color-bgPrimary: #fff8f2; 
   --color-bgSecondary: #E9E9E9; 
   --color-surface: #ffffff;
@@ -20,7 +20,7 @@
 .dark {
   --color-primary: #e67200;
   --color-primary-hover:  #ff8100;
-  --color-accent: #8e24aa;
+  --color-accent: #ffd54f;
   --color-bgPrimary: #282828; 
   --color-bgSecondary: #353435; 
   --color-bgButtons: #4A2358; 
@@ -41,6 +41,7 @@
   --color-bgButtons : var(--color-bgButtons);
   --color-surface : var(--color-surface);
   --color-text : var(--color-text);
+  --color-accent : var(--color-accent);
   --color-text-secondary : var(--color-text-secondary);
   --color-border : var(--color-border);
   --color-shadows : var(--color-shadows);
