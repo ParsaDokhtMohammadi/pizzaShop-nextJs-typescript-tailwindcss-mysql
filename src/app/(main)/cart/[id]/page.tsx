@@ -11,9 +11,10 @@ export default async function Cart({ params }: { params: { id: string } }) {
   const User = await sessionHelper()
   if (User?.id != id || !User) redirect("/")
   const data = await getCartItems(+User?.id)
-
+  console.log(data);
+  
 
   
 
-  return <CartPage data={data as []}/>;
+  return <CartPage data={data as []} cart_id={id}/>;
 } 

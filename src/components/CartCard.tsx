@@ -1,11 +1,13 @@
+"use server"
+import CartButton from '@/elements/CartButton'
 import { ICartItem } from '@/types/types'
 import Image from 'next/image'
 import React from 'react'
 
-const CartCard = ({data} : {data:ICartItem}) => {
+const CartCard = ({data , cart_id} : {data:ICartItem , cart_id:string}) => {
   return (
-
-    <div className='flex not-md:w-[400px] bg-bgPrimary justify-between items-center rounded-2xl py-5 pl-5 pr-12 relative '>
+    
+    <div className='flex  w-3/4 bg-bgPrimary justify-between items-center rounded-2xl py-5 pl-5 pr-12 relative '>
         <Image 
         src={data.imageURL} alt={data.name} width={90} height={90} 
         className='absolute right-[-50] bottom-1.5'
@@ -14,7 +16,8 @@ const CartCard = ({data} : {data:ICartItem}) => {
                 <span>{data.name}</span>
                 <span>{data.price} تومان</span>
         </div>
-        buttons
+        <CartButton data={{cart_id , item_id:data?.id , quantity:data?.quantity}}/>
+        
 
     </div>
   )
