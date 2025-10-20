@@ -1,4 +1,3 @@
-// components/CartLink.tsx
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -47,7 +46,7 @@ const CartLink = () => {
   return (
     <Link href={`/cart/${userId}`} className="relative">
       {cartCount > 0 && (
-        <div className="absolute bg-primary rounded-full px-1 text-[10px] bottom-3.5 left-4">
+        <div className="absolute bg-primary rounded-full px-1 text-[10px] bottom-3.5 left-4 text-white">
           {cartCount}
         </div>
       )}
