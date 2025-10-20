@@ -1,16 +1,17 @@
-import Card from '@/components/Card'
-import { IItem } from '@/types/types'
+
+import CartCard from '@/components/CartCard'
+import { ICartItem } from '@/types/types'
 import React from 'react'
 
-const CartPage = ({data,inCart} : {data:Array<ICartItem> , inCart:Array<number>}) => {
+const CartPage = ({data} : {data:Array<ICartItem>}) => {
 
   
   return (
     <div className='flex'>
-      <ul className='flex list-none flex-wrap'>
+      <ul className='flex list-none flex-wrap gap-4 p-20'>
             {data.map((datum , index)=>(
               <li key={index}>
-                <Card data={datum} inCart={inCart.includes(datum.id)}/>
+                <CartCard data={datum}/>
               </li>
       ))}
       </ul>
