@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**this project is currently under development**
 
-## Getting Started
 
-First, run the development server:
+A full-stack Next.js + TypeScript online pizza ordering system 
+Users can browse the menu, add items to their cart, and place orders during open hours.
+Admins can manage menu items, employees, orders, and discounts — with plans to add full inventory management later.
 
-```bash
+This project is built to simulate a real-world restaurant management system, while helping me deepen my experience with TypeScript, server actions, and full-stack architecture using Next.js App Router.
+
+🧩 Features
+👥 User Features
+
+🍽️ Browse Menu – View available pizzas and sides with prices and descriptions.
+
+🛒 Add to Cart – Add or remove items dynamically before checkout.
+
+📦 Place Orders – Submit orders (no payment required) during open hours only.
+
+🔐 Authentication (NextAuth) – Secure user sign-in and session management.
+
+🧑‍💼 Admin Features (in progress)
+
+📋 Menu Management – Add, edit, or remove items from the menu.
+
+💸 Discount Codes – Create and manage discount campaigns.
+
+🧑‍🍳 Staff Management – View and manage active restaurant employees.
+
+🧾 Order Management – Track and update order statuses in real-time.
+
+📦 Inventory System (planned) – Manage stock and ingredient levels.
+
+🛠️ Tech Stack
+
+Framework: Next.js (App Router)
+Language: TypeScript
+Styling: TailwindCSS
+Forms & Validation: React Hook Form (RHF), Zod
+Database: MySQL
+Auth: NextAuth
+File Uploads (Planned): Multer
+Other: Server Actions, API Routes
+
+📦 Installation & Setup
+# Clone the repository
+git clone https://github.com/ParsaDokhtMohammadi/pizzaShop-nextJs-typescript-tailwindcss-mysql
+
+# Navigate into the project folder
+cd pizzaShop-nextJs-typescript-tailwindcss-mysql
+
+# Install dependencies
+npm install
+
+# Add environment variables in .env.local
+DATABASE_URL=your_mysql_connection_string
+NEXTAUTH_SECRET=your_secret
+NEXTAUTH_URL=http://localhost:3000
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Then open http://localhost:3000
+ to view the app 🚀
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🎯 Project Goals
 
-## Learn More
+Build a real-world restaurant management system from scratch
 
-To learn more about Next.js, take a look at the following resources:
+Gain deeper understanding of TypeScript in full-stack development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Practice Next.js server actions and modern data fetching
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Implement reusable components and clean architecture patterns
 
-## Deploy on Vercel
+🚀 Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Add payment gateway integration (e.g., Stripe test mode)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Complete inventory management system
+
+Implement order tracking for users (e.g., order status timeline)
+
+Add analytics dashboard for admin
+
+Improve UI/UX and responsive design
